@@ -1,10 +1,5 @@
-def payment_check():
-    pass
-
-all_sets_prices = []
-
-
 amount_of_sets = int(input())
+all_sets_prices = [0 for i in range(amount_of_sets)]
 
 for set in range(amount_of_sets):
 
@@ -14,10 +9,9 @@ for set in range(amount_of_sets):
 
     for item in prices:
         if item not in price_and_amount:
-            all_sets_prices.append(item*(prices.count(item)//3*2 + prices.count(item)%3))
+            all_sets_prices[set] += item*(prices.count(item)//3*2 + prices.count(item)%3)
             price_and_amount[item] = prices.count(item)
 
-    #all_sets_prices.append(price_and_amount)
 
 for set in all_sets_prices:
     print(set)
