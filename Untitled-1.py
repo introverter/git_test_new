@@ -8,7 +8,7 @@ for set in range(amount_of_sets):
     prices = [int(i) for i in input().split(' ')]
 
     for item in prices:
-        if item not in price_and_amount:
+        if item not in price_and_amount.keys():
             all_sets_prices[set] += item*(prices.count(item)//3*2 + prices.count(item)%3)
             price_and_amount[item] = prices.count(item)
 
